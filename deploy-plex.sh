@@ -61,7 +61,7 @@ echo""
 echo "rechargement de la derniere version DBXPlex"
 echo""
 
-docker run -tid --name=DBXPlex --restart=always --net=host -e PUID=33 -e PGID=33 -e TZ=Europe/Paris -v /home/dbx/data0:/data -v /home/dbx/lib0/plex/config:/config -v /home/dbx/cache0/plex:/trans>
+docker run -tid --name=DBXPlex --restart=always --net=host -e PUID=33 -e PGID=33 -e TZ=Europe/Paris -v /home/dbx/data0:/data -v /home/dbx/lib0/plex/config:/config -v /home/dbx/cache0/plex:/transcode -p 127.0.20.3:32400:32400 -p 127.0.20.3:32400:32400/udp -p 127.0.20.3:32469:32469 -p 127.0.20.3:32469:32469/udp -p 127.0.20.3:5353:5353/udp -p 127.0.20.3:1900:1900/udp plexinc/pms-docker:latest
 
 echo""
 echo "demarrage de DBXPlex"
